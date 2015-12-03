@@ -33,7 +33,7 @@ Profile, optimize, measure... and then lather, rinse, and repeat. Good luck!
 ####Part 1a: Optimizations to index.html
 
 1. Optimized images
-    - Used gulp plugin 'gulp-imagemin'
+    - Used gulp plugin gulp-imagemin
 2. Resized pizzeria.jpg to 360x270
     - Resized manually using GIMP because only 1 file needed to be resized
     - Used GIMP to further minimize pizzeria.jpg by turning down the jpg quality from 98 to 50.
@@ -41,10 +41,10 @@ Profile, optimize, measure... and then lather, rinse, and repeat. Good luck!
     - Made analytics.js and perfmatters.js asynchronous
 4. Fixed render blocking CSS
     - Removed the unnecessary stylesheet for Google fonts
-5. Inlined CSS
-    - Used gulp plugin 'gulp-inline'
+    - Added a print media query for print.css
+    - Inlined CSS using gulp plugin gulp-inline
 6. Minimized the following: HTML, inline CSS, and inline JavaScript
-    - Used gulp plugins 'gulp-inline' 'gulp-uglify' 'gulp-minify-css' 'gulp-minify-html'
+    - Used gulp plugins gulp-inline, gulp-uglify, gulp-minify-css, gulp-minify-html
 
 ####Part 2: Optimize Frames per Second in pizza.html
 
