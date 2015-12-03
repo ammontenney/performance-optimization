@@ -29,6 +29,12 @@ gulp.task('min_js', function(){
     min_js_helper('src/views/js/**/*.js', 'dist/views/js');
 });
 
+gulp.task('watch', function(){
+    gulp.watch(['src/*.html', 'src/views/*.html'],['min_html']);
+    gulp.watch(['src/img/**/*', 'src/views/images/**/*'],['min_img']);
+    gulp.watch(['src/css/**/*.css', 'src/views/css/**/*.css'],['min_css']);
+    gulp.watch(['src/js/*.js', 'src/views/js/*.js'], ['min_js']);
+});
 
 // Some helper functions for above
 

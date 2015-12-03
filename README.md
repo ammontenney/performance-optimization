@@ -52,6 +52,20 @@ To optimize views/pizza.html, you will need to modify views/js/main.js until you
 
 You might find the FPS Counter/HUD Display useful in Chrome developer tools described here: [Chrome Dev Tools tips-and-tricks](https://developer.chrome.com/devtools/docs/tips-and-tricks).
 
+#### Part 2a: Optimizations made to pizza.html
+
+1. Scrolling Performance Optimizations
+    - Eliminated FSL by implementing best practice for debouncing scroll events and utilizing requestAnimationFrame. See link for details:
+        http://www.html5rocks.com/en/tutorials/speed/animations/
+    - Eliminated redundant DOM tree query
+    - Used getElementsByClassName instead of querySelectorAll
+    - Precalculated phases in updatePositions
+2. Pizza Resize Performance Optimizations
+    - Eliminated FSL by removing layout calls from for loop resizePizzas
+    - Later entirely removed layout calls by replacing determineDx and substituting a simple % value for the width
+    - Removed redundant/unnecessary DOM tree queries
+    - Used getElementsByClassName instead of querySelectorAll
+
 ### Optimization Tips and Tricks
 * [Optimizing Performance](https://developers.google.com/web/fundamentals/performance/ "web performance")
 * [Analyzing the Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/analyzing-crp.html "analyzing crp")
