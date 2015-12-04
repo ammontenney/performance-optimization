@@ -1,5 +1,5 @@
 Access hosted project page from GitHub:
-    [address goes here]
+    http://russkidrewski.github.io/frontend-nanodegree-mobile-portfolio/dist/
 
 Setup the project from GitHub source:
     * Requires node.js, npm, and gulp to be installed
