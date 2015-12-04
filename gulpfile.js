@@ -4,6 +4,7 @@ var inline = require('gulp-inline');
 var uglify = require('gulp-uglify');
 var minifyHTML = require('gulp-minify-html');
 var minifyCSS = require('gulp-minify-css');
+var jshint = require('gulp-jshint');
 
 gulp.task('default', ['min_html', 'min_css', 'min_js']);
 
@@ -34,6 +35,12 @@ gulp.task('watch', function(){
     gulp.watch(['src/img/**/*', 'src/views/images/**/*'],['min_img']);
     gulp.watch(['src/css/**/*.css', 'src/views/css/**/*.css'],['min_css']);
     gulp.watch(['src/js/*.js', 'src/views/js/*.js'], ['min_js']);
+});
+
+gulp.task('lint', function(){
+    gulp.src(['src/js/*.js', 'src/views/js/*.js'])
+        .pipe(jshint())
+        .pipe(jshint.reporter('default'));
 });
 
 // Some helper functions for above
