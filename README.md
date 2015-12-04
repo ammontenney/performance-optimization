@@ -2,11 +2,11 @@
 
 #### Access hosted project page from GitHub:
 
-    http://russkidrewski.github.io/frontend-nanodegree-mobile-portfolio/dist/
+http://russkidrewski.github.io/frontend-nanodegree-mobile-portfolio/dist/
 
 #### Setup the project from GitHub source:
 
-    * Requires node.js, npm, and gulp to be installed
+###### Requires node.js, npm, and gulp to be installed
 
 Clone the repo:
 ```bash
@@ -48,13 +48,13 @@ $> ngrok http 8080
 
 #### Gulp tasks:
 * default
-  *Runs all the tasks except min_img
+  * Runs all the tasks except min_img
 * min_everything
-  *Runs all task including min_img
+  * Runs all task including min_img
 * min_html
-  *        Minifies HTML and in-lines external CSS
+  * Minifies HTML and in-lines external CSS
 * min_css
-  *Minifies CSS
+  * Minifies CSS
 * min_js
   * Minifies JavaScript
 * watch
