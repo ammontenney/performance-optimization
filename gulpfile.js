@@ -33,7 +33,7 @@ gulp.task('min_js', function(){
 gulp.task('watch', function(){
     gulp.watch(['src/*.html', 'src/views/*.html'],['min_html']);
     gulp.watch(['src/img/**/*', 'src/views/images/**/*'],['min_img']);
-    gulp.watch(['src/css/**/*.css', 'src/views/css/**/*.css'],['min_css']);
+    gulp.watch(['src/css/**/*.css', 'src/views/css/**/*.css'],['min_css', 'min_html']);
     gulp.watch(['src/js/*.js', 'src/views/js/*.js'], ['min_js']);
 });
 

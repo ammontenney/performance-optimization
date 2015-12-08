@@ -501,9 +501,12 @@ function updatePositions() {
                     Math.sin((scrlTop / 1250) + 3),
                     Math.sin((scrlTop / 1250) + 4)];
 
+    var px = 0;
     for (var i = 0; i < items.length; i++) {
-        // var phase = Math.sin((scrlTop / 1250) + (i % 5));
-        items[i].style.left = items[i].basicLeft + 100 * phases[(i%5)] + 'px';
+        px = items[i].basicLeft + 100 * phases[(i%5)] + 'px';
+        items[i].style.left = px;
+        // items[i].style.transform = 'translateX(' + px + ')';
+        // This optimization didn't help much and it kind of broke the pizzas
     }
 
     // used to debounce scroll events. this says rAF has finished
@@ -539,8 +542,8 @@ window.addEventListener('scroll', onScroll);
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
-  // reduce pizzas in background from 200 to 55. Should suffice for most screen sizes.
-  for (var i = 0; i < 55; i++) {
+  // reduce pizzas in background from 200 to 32. Should suffice for most screen sizes.
+  for (var i = 0; i < 32; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";

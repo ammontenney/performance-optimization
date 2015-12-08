@@ -89,6 +89,8 @@ $> ngrok http 8080
   - Eliminated redundant DOM tree query
   - Used getElementsByClassName instead of querySelectorAll
   - Precalculated phases in updatePositions
+  - Added style to mover class (will-change: transform) to put the moving pizzas into their own layers
+  - Changed choice of style.left to more efficient style.transform
 2. Pizza Resize Performance Optimizations
   - Eliminated FSL by removing layout calls from for loop resizePizzas
   - Later entirely removed layout calls by replacing determineDx and substituting a simple % value for the width
