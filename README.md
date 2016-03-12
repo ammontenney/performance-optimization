@@ -1,8 +1,50 @@
 ## Website Performance Optimization Portfolio Project
 
-#### Access hosted project page from GitHub:
+#### Description:
 
-http://russkidrewski.github.io/frontend-nanodegree-mobile-portfolio/dist/
+For this project, I was provided a website with serious performance problems.
+
+With the skills that I learned for this project:
+1. I dramatically increased the PageSpeed score for index.html to above 90.
+1. I improved the rendering speed of pizza.html to a very smooth 60 fps.
+
+#### Optimizations to index.html:
+1. Optimized images
+  - Used gulp plugin gulp-imagemin
+1. Resized pizzeria.jpg to 360x270
+  - Resized manually using GIMP because only 1 file needed to be resized
+  - Used GIMP to further minimize pizzeria.jpg by turning down the jpg quality from 98 to 50.
+1. Fixed render blocking Javascript
+  - Made analytics.js and perfmatters.js asynchronous
+1. Fixed render blocking CSS
+  - Removed the unnecessary stylesheet for Google fonts
+  - Added a print media query for print.css
+  - Inlined CSS using gulp plugin gulp-inline
+1. Minimized the following: HTML, in-line CSS, and in-line JavaScript
+  - Used gulp plugins
+    - gulp-inline
+    - gulp-uglify
+    - gulp-minify-css
+    - gulp-minify-html
+
+#### Optimizations to pizza.html:
+1. Scrolling Performance Optimizations
+  - Eliminated FSL by implementing best practice for debouncing scroll events and utilizing requestAnimationFrame. See link for details:
+    - http://www.html5rocks.com/en/tutorials/speed/animations/
+  - Eliminated redundant DOM tree query
+  - Used getElementsByClassName instead of querySelectorAll
+  - Precalculated phases in updatePositions
+  - Added style to mover class (will-change: transform) to put the moving pizzas into their own layers
+  - Changed choice of style.left to more efficient style.transform
+2. Pizza Resize Performance Optimizations
+  - Eliminated FSL by removing layout calls from for loop resizePizzas
+  - Later entirely removed layout calls by replacing determineDx and substituting a simple % value for the width
+  - Removed redundant/unnecessary DOM tree queries
+  - Used getElementsByClassName instead of querySelectorAll
+
+  #### Access the hosted project page from GitHub:
+
+  http://ammontenney.github.io/performance-optimization/
 
 #### Setup the project from GitHub source:
 
@@ -10,7 +52,7 @@ http://russkidrewski.github.io/frontend-nanodegree-mobile-portfolio/dist/
 
 Clone the repo:
 ```bash
-$> git clone https://github.com/russkidrewski/frontend-nanodegree-mobile-portfolio.git
+$> git clone https://github.com/ammontenney/performance-optimization.git
 ```
 
 Open the project folder:
@@ -62,37 +104,3 @@ $> ngrok http 8080
   * Does not include min_img
 * lint
   * lints the JavaScript using jshint
-
-#### Optimizations to index.html:
-1. Optimized images
-  - Used gulp plugin gulp-imagemin
-1. Resized pizzeria.jpg to 360x270
-  - Resized manually using GIMP because only 1 file needed to be resized
-  - Used GIMP to further minimize pizzeria.jpg by turning down the jpg quality from 98 to 50.
-1. Fixed render blocking Javascript
-  - Made analytics.js and perfmatters.js asynchronous
-1. Fixed render blocking CSS
-  - Removed the unnecessary stylesheet for Google fonts
-  - Added a print media query for print.css
-  - Inlined CSS using gulp plugin gulp-inline
-1. Minimized the following: HTML, in-line CSS, and in-line JavaScript
-  - Used gulp plugins
-    - gulp-inline
-    - gulp-uglify
-    - gulp-minify-css
-    - gulp-minify-html
-
-#### Optimizations to pizza.html:
-1. Scrolling Performance Optimizations
-  - Eliminated FSL by implementing best practice for debouncing scroll events and utilizing requestAnimationFrame. See link for details:
-    - http://www.html5rocks.com/en/tutorials/speed/animations/
-  - Eliminated redundant DOM tree query
-  - Used getElementsByClassName instead of querySelectorAll
-  - Precalculated phases in updatePositions
-  - Added style to mover class (will-change: transform) to put the moving pizzas into their own layers
-  - Changed choice of style.left to more efficient style.transform
-2. Pizza Resize Performance Optimizations
-  - Eliminated FSL by removing layout calls from for loop resizePizzas
-  - Later entirely removed layout calls by replacing determineDx and substituting a simple % value for the width
-  - Removed redundant/unnecessary DOM tree queries
-  - Used getElementsByClassName instead of querySelectorAll
