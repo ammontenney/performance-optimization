@@ -2,12 +2,12 @@
 
 #### Description:
 
-For this project, I was provided a website with serious performance problems.
+Dramatically increased website performance using best practices for page loading and browser rendering optimization
 
 With the skills that I learned for this project:
 
-1. I dramatically increased the PageSpeed score for index.html to above 90.
-1. I improved the rendering speed of pizza.html to a very smooth 60 fps.
+1. I increased the PageSpeed score for index.html to 90
+1. I improved the rendering speed of pizza.html to a very smooth 60 fps
 
 #### Optimizations to index.html:
 1. Optimized images
