@@ -58,7 +58,7 @@ $> git clone https://github.com/ammontenney/performance-optimization.git
 
 Open the project folder:
 ```bash
-$> cd frontend-nanodegree-mobile-portfolio
+$> cd performance-optimization
 ```
 
 Setup local gulp for the project clone:
